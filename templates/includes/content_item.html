@@ -1,0 +1,41 @@
+<!-- Отображение карточек в столбцах и стороках -->
+<div class="card-deck">
+<!-- Выдача всех дел из базы -->
+    {% for todo in todos %}
+    <div class="row">
+    <div class="col">
+
+<div class="card text-white bg-info mb-3">
+    <!-- Отображение содержимого в header -->
+    <div class="card-header">
+    <h4>Категория: {{ todo.category }}</h4>
+
+    </div>
+    <!-- Отображение содержимого в body -->
+        <div class="card-body">
+        <p><b>Дело:</b> {{ todo.name_todo }}</p>
+        <p><b>Комментарий:</b> {{ todo.description_todo }}</p>
+        <p><b>Дедлайн:</b> {{ todo.deadline_date }}</p>
+        <br>
+
+         <!-- Дата публикации поста -->
+        <small class="text-muted"><b>Создано: {{ todo.pub_date }}</b></small>
+
+        </div>
+    <!-- Отображение кнопок в footer -->
+    <div class="card-footer text-muted">
+    <p><a href="#" class="btn btn-primary">Редактировать</a>
+        <a href="#" class="btn btn-primary">Удалить</a></p>
+    </div>
+
+</div>
+
+    </div>
+    </div>
+
+{% endfor %}
+
+</div>
+
+
+

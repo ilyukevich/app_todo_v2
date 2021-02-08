@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Последние обновления дел: {% endblock %}
+
+{% block content %}
+    <p class="container">
+        <p></p><center><h2>Карточки последних добавленных дел:</h2></center></p>
+            <!-- Вывод ленты записей -->
+                  <!-- Вот он, новый include! -->
+                    {% include "includes/content_item.html" with todo=todo %}
+    </div>
+
+{% endblock %}
