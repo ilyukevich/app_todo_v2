@@ -21,4 +21,4 @@
 
 ```http://localhost:8000/admin```
 
-![Image alt](https://github.com/ilyukevich/app_todo_v2/raw/master/screen.png)
+![Screenshot](screen.png)
