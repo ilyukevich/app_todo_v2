@@ -1,6 +1,6 @@
 # app_todo_v2
 
-#### Django 3.2.8
+#### Django 3.1.6
 #### Pillow 8.3.2
 
 ## install
