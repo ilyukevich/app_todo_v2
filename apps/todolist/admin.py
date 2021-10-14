@@ -23,8 +23,6 @@ class TodoAdmin(admin.ModelAdmin):
     empty_value_display = '-пусто-'
 
 
-
 # when registering a Post model as a configuration source, assign the PostAdmin class to it
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Todo, TodoAdmin)
-

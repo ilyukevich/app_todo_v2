@@ -1,10 +1,9 @@
 from django.db import models
 #from django.contrib.auth import get_user_model
 
-# Create your models here.
 
 class Category(models.Model):
-    """Categories: films, audio or books"""
+    """***"""
 
     name_category = models.TextField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
@@ -13,8 +12,9 @@ class Category(models.Model):
     def __str__(self):
         return self.name_category
 
+
 class Todo(models.Model):
-    """Модель To_Do"""
+    """***"""
 
     name_todo = models.TextField('name')
     category = models.ForeignKey(

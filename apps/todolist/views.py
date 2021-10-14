@@ -10,6 +10,7 @@ def index(request):
 
     return render(request, 'index.html', context)
 
+
 def category(request):
     categories = Category.objects.all()
     if request.method == 'POST':
@@ -36,7 +37,6 @@ def todo(request):
     return render(request, 'todo.html', {'form': form})
 
 
-
 # def todo_edit(request, todo_id):
 #     #profile = get_object_or_404(User, username=username)
 #     todo_post = get_object_or_404(Todo, id=todo_id)
@@ -50,4 +50,3 @@ def todo(request):
 #         edit_dodo.pub_date = post.pub_date
 #         edit_post.save()
 #         return redirect("index", post_id=post_id)
-
