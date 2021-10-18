@@ -1,7 +1,10 @@
 <!-- Отображение карточек в столбцах и стороках -->
 <div class="card-deck">
 <!-- Выдача всех дел из базы -->
+
     {% for todo in todos %}
+    {% if todo.active %}
+
     <div class="row">
     <div class="col">
 
@@ -18,13 +21,13 @@
         <p><b>Дедлайн:</b> {{ todo.deadline_date }}</p>
         <br>
 
-         <!-- Дата публикации поста -->
-        <small class="text-muted"><b>Создано: {{ todo.pub_date }}</b></small>
+         <!-- Дата публикации -->
+        <small class="text-dark"><b>Создано: {{ todo.pub_date }}</b></small>
 
         </div>
     <!-- Отображение кнопок в footer -->
     <div class="card-footer text-muted">
-        <center><p><a href="#" class="btn btn-primary">Выполнено! Удалить.</a></p></center>
+        <center><p><a href="#" class="btn btn-success">Выполнено! Удалить</a></p></center>
     </div>
 
 </div>
@@ -32,7 +35,9 @@
     </div>
     </div>
 
-{% endfor %}
+    {% endif %}
+    {% endfor %}
+
 
 </div>
 

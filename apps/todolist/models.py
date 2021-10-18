@@ -3,9 +3,9 @@ from django.db import models
 
 
 class Category(models.Model):
-    """***"""
+    """Модель для категории"""
 
-    name_category = models.TextField(max_length=200)
+    name_category = models.TextField('name category', max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     description_category = models.TextField('description category', null=True)
 
@@ -14,21 +14,19 @@ class Category(models.Model):
 
 
 class Todo(models.Model):
-    """***"""
+    """Модель для карточки задания"""
 
-    name_todo = models.TextField('name')
-    category = models.ForeignKey(
-                                Category,
-                                on_delete=models.SET_NULL,
-                                null=True, related_name='todo',
-                                )
-    #pub_date = models.DateTimeField('date published')
-    pub_date = models.DateTimeField('date published', auto_now_add=True)
-    deadline_date = models.DateTimeField('date of deadline')
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='todo',)
+    name_todo = models.TextField('name todo')
     description_todo = models.TextField('description todo', null=True)
+    pub_date = models.DateTimeField('date created todo', auto_now_add=True)
+    deadline_date = models.DateTimeField('date of deadline todo')
+    upd_date = models.DateTimeField('date update todo', auto_now=True)
+    active = models.BooleanField('active', default=True)
+
 
     class Meta:
-        # сортировка дате
+
         ordering = ["-pub_date"]
 
     def __str__(self):
